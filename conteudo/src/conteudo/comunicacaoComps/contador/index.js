@@ -6,21 +6,21 @@ import { useState } from 'react'
 export default function Pai() {
     const [qtd, setQtd] = useState(0);
   
-    function contar() {
+    function somar() {
       setQtd(qtd + 1);
     }
   
-    function reset(x) {
-      setQtd(x);
+    function reset(j) {
+      setQtd(j);
     }
   
     return (
       <div className="container">
         <h1> Contador </h1>
         <div> {qtd} </div>
-        <button onClick={contar}> Contar </button>
+        <button onClick={somar}> Somar </button>
   
-        <Filho onReset={reset} qtd={qtd} />
+        <Filho Resetar={reset} qtd={qtd} />
   
       </div>
     )
@@ -29,7 +29,7 @@ export default function Pai() {
   
   function Filho(props) {
     function reset() {
-      props.onReset(0);
+      props.Resetar(0);
     }
   
     return (
@@ -39,38 +39,3 @@ export default function Pai() {
       </div>
     )
   }
-    // export default function Pai() {
-    //     const [qtd, setQtd] = useState(0);
-
-    //     function somar() {
-    //         setQtd(qtd + 1);
-    //     }
-
-    //     function reset() {
-    //         setQtd();
-    //     }
-
-    //     return (
-    //         <div className="container">
-    //             <h1> Contador </h1>
-    //             <div> {qtd} </div>
-    //             <button onClick={somar}> Somar</button>
-
-    //             < Filho Resetado={reset} qtd={qtd} />
-    //         </div>
-    //     )
-    // }
-
-
-    // function Filho(props) {
-    //     function reset() {
-    //         props.Resetado(0);
-    //     }
-
-    //     return (
-    //         <div className="container">
-    //             <button onClick={reset}> Resetar</button>
-    //             <div> {props.qtd} </div>
-    //         </div>
-    //     )
-    // }
